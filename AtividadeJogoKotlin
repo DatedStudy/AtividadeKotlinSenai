@@ -1,0 +1,46 @@
+fun main(){
+
+    val p : Personagem = Personagem("", 100, 100, 25)
+    val i : Inimigo = Inimigo(100, 100, 10)
+
+    println("Bem Vindo Castle Noble")
+
+    println("Escreva o nome do seu personagem: ")
+    p.nome = readln()
+
+    println("----------------------")
+    println("Personagem")
+    println("nome: ${p.nome}")
+    println("vida: ${p.vida}")
+    println("dano: ${p.dano}")
+    println("----------------------")
+
+    println("Fase Final")
+    
+    if()
+
+
+
+
+}
+
+class Personagem(var nome: String, val vidaMax: Int, var vida: Int, val dano: Int){
+
+    fun ataque(inimigo: Inimigo) { inimigo.vida -= dano }
+
+    fun  usarPorcao(porcao: Porcao){
+        vida = vidaMax
+        porcao.quantidade--
+
+        if(porcao.quantidade == 0) println("Sem porcao")
+    }
+
+}
+
+class Inimigo(var vidaMax: Int, var vida: Int, var dano: Int){
+
+    fun ataque(personagem: Personagem) { personagem.vida -= dano }
+
+}
+
+class Porcao(var quantidade: Int = 5)
